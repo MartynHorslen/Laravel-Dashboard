@@ -34,14 +34,14 @@
             <ul class="navbar-nav px-2 text-center">
                 <li class="nav-item fw-bolder fs-5 pb-4">Admin Dashboard</li>
                 <li class="btn-primary nav-item border-top border-white py-4">
-                    <a href="#" class="text-white text-decoration-none">
-                        <i class="d-block fs-4 pb-2 fa-solid fa-building"></i>
+                    <a href="#" class="text-white text-decoration-none gap-lg-3 justify-content-lg-center d-lg-flex align-baseline">
+                        <i class="d-block d-lg-flex fs-4 pb-2 pb-lg-0 fa-solid fa-building"></i>
                         Companies
                     </a>
                 </li>
                 <li class="btn-primary nav-item border-top border-white py-4">
-                    <a href="#" class="text-white text-decoration-none">
-                        <i class="d-block fs-4 pb-2 fa-solid fa-people-group"></i>
+                    <a href="#" class="text-white text-decoration-none gap-lg-3 justify-content-lg-center d-lg-flex align-baseline">
+                        <i class="d-block d-lg-flex fs-4 pb-2 pb-lg-0 fa-solid fa-people-group"></i>
                         Employees
                     </a>
                 </li>
@@ -49,8 +49,8 @@
         </div>
         <div id="app">    
             <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow"> -->
-            <nav class="navbar navbar-expand-sm navbar-light bg-white shadow">
-                <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
+                <div class="container-fluid justify-content-md-end mx-md-3">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
