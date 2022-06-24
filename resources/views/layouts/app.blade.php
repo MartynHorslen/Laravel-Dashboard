@@ -21,41 +21,42 @@
 </head>
 <body>
     <div id="app">    
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow"> -->
         <nav class="navbar navbar-expand-sm navbar-dark bg-primary shadow">
-            <div class="container">
-                <a class="navbar-brand" href="#">{{ config('app.name', 'Laravel') }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+
+                @guest
+                    @if (Route::has('login'))
+                            <a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    @endif
+                @else
+                <!-- **** This is incase we add more links and need a hamburger menu **** -->
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> -->
+                <div class="d-flex" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ms-auto flex-row gap-3">
+                        <li class="nav-item text-right">
+                            <span class="nav-link btn text-white ml-auto pe-none user-select-auto">{{ Auth::user()->name }}</span>
+                        </li>
+                        <li class="nav-item text-right"> 
+                            <a class="nav-link btn btn-primary text-white px-2" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav ms-auto">
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item nav-link">
-                                {{ Auth::user()->name }}
-                            </li>
-                            <li>    
-                                <a class="nav-link active" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        @endguest
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </div>
+                @endguest
             </div>
         </nav>
+
         <main class="py-4">
             @yield('content')
         </main>
