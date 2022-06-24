@@ -51,7 +51,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
+                        <div class="row mb-3">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
@@ -65,6 +65,14 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <span class="d-block">Testing account:</span>
+                            <span class="d-block">Email: admin@admin.com</span>
+                            <span class="d-block">Password: password</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

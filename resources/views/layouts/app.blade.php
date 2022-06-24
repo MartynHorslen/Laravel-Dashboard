@@ -30,6 +30,7 @@
 </head>
 <body class="bg-light">
     <div class="wrapper">
+        @auth
         <div id="sidebar" class="navbar bg-primary text-white sidebar d-flex flex-column align-items-center py-4">
             <ul class="navbar-nav px-2 text-center">
                 <li class="nav-item fw-bolder fs-5 pb-4">Admin Dashboard</li>
@@ -47,19 +48,18 @@
                 </li>
             </ul>
         </div>
+        @endauth
         <div id="app">    
             <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow"> -->
+            @auth
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
                 <div class="container-fluid justify-content-md-end mx-md-3">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    @guest
-                        @if (Route::has('login'))
-                                <a class="btn btn-light" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        @endif
-                    @else
+                    
+                    @auth
                     <!-- **** This is incase we add more links and need a hamburger menu **** -->
                     <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -82,10 +82,10 @@
                             </li>
                         </ul>
                     </div>
-                    @endguest
+                    @endauth
                 </div>
             </nav>
-
+            @endauth
             <main class="py-4">
                 @yield('content')
             </main>
