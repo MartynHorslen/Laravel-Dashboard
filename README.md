@@ -35,16 +35,12 @@ You don't have to answer all the questions - just the ones relevant to your proj
 
 ## Room for Improvement
 Improvement:
-- Improvement to be done 1
-- Improvement to be done 2
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
+- Sidebar menu with hamburger toggler in navbar.
 
 Known Bugs:
-- Bug 1
-- Bug 2
+
 <!-- ## Screenshots
 ![Example screenshot](./img/screenshot.png)
 If you have screenshots you'd like to share, include them here. -->
