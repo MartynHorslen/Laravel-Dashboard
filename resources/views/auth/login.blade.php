@@ -30,9 +30,9 @@
 </head>
 
 <x-layout.wrapper>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-10 col-sm-8">
                 <div class="card">
                     <div class="card-header">{{ __('Login') }}</div>
 
