@@ -2,58 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import 'variables';
+@import 'variables',
+        'sidebar',
+        'wrapper';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-.wrapper {
-    display: flex;
-    flex-direction: row;
-
-    .sidebar {
-        min-height: 100vh;
-        flex-basis: 110px;
-        margin-left: -110px;
-    }
-
-    #app {
-        flex: 1;
-    }
-}
-
-.close {
-    animation: s-right 0.5s forwards;
-}
-.left {
-    animation: s-left 0.5s forwards;
-}
-
-@keyframes s-left {
-    from {
-        margin-left: 0px;
-    }
-    to {
-        margin-left: -110px;
-    }
-}
-
-@keyframes s-right {
-    from {
-        margin-left: -110px;
-    }
-    to {
-        margin-left: 0px;
-    }
-}
-
-@media (min-width: 768px) {
-    .wrapper .sidebar {
-        margin-left: 0px;
-    }
-}
-@media (min-width: 992px) {
-    .wrapper .sidebar {
-        flex-basis: 224px;
-    }
-}
