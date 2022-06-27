@@ -6,5 +6,6 @@ $( ".navbar-toggler" ).click(function() {
         }, 600);
     } else {
         $(".sidebar").addClass("close").removeClass("left");
+        $('#app').css('width', 'calc(100% - 110px)');
     }       
 });

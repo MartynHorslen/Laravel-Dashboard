@@ -4,5 +4,9 @@
 
     #app {
         flex: 1;
+        width: 100%;
+        .table-responsive {
+            max-height: 400px;
+        }
     }
 }

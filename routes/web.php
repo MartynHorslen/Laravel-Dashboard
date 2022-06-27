@@ -17,3 +17,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 //['register' => false]
 Auth::routes();
+
+Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index']);
+
+Route::get('/employees', [App\Http\Controllers\EmployeeController::class, 'index']);
