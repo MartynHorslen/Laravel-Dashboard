@@ -41,9 +41,8 @@ To do:
 
 Known Bugs:
 
-<!-- ## Screenshots
-![Example screenshot](./img/screenshot.png)
-If you have screenshots you'd like to share, include them here. -->
+## Screenshots
+![Companies Page](https://i.gyazo.com/67260a7c1c74ad4b48b299e1d4e4fd23.png)
 
 
 <!-- ## Setup
