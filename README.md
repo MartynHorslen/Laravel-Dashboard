@@ -37,13 +37,12 @@ You don't have to answer all the questions - just the ones relevant to your proj
 Improvement:
 
 To do:
-- Sidebar menu with hamburger toggler in navbar.
+- Sidebar menu active page link styling
 
 Known Bugs:
 
-<!-- ## Screenshots
-![Example screenshot](./img/screenshot.png)
-If you have screenshots you'd like to share, include them here. -->
+## Screenshots
+![Companies Page](https://i.gyazo.com/67260a7c1c74ad4b48b299e1d4e4fd23.png)
 
 
 <!-- ## Setup

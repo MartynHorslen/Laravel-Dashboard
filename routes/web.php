@@ -19,5 +19,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Auth::routes();
 
 Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index']);
+Route::get('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'edit']);
+Route::patch('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'update']);
 
 Route::get('/employees', [App\Http\Controllers\EmployeeController::class, 'index']);

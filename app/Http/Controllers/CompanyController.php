@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Illuminate\Validation\Rules\Unique;
+use Illuminate\Validation\Rule;
 
 class CompanyController extends Controller
 {
@@ -28,5 +30,32 @@ class CompanyController extends Controller
             'dataObject' => Company::all(),
             'type' => 'companies'
         ]);
+    }
+
+    public function edit(Company $id)
+    {
+        return view('edit', [
+            'data' => $id,
+            'type' => 'company'
+        ]);
+    }
+    
+    public function update(Company $company)
+    { 
+        $attributes = request()->validate([
+            'name' => ['required', Rule::unique('companies', 'name')->ignore($company)],
+            'logo' => 'image',
+            'website' => '',
+            'email' => ''
+        ]);
+        
+        if(isset($attributes['logo'])){
+            $attributes['logo'] = request()->file('logo')->store('logo');
+        }
+
+        $update = $company->update($attributes);
+        ddd($update);
+
+        return back();
     }
 }
