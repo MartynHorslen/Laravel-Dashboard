@@ -1,14 +1,8 @@
 <!-- Run a foreach widgets as widget...? -->
 <div class="card">
-    <div class="card-header">{{ __('Widget-1') }}</div>
+    <div class="card-header">{{ __('Overview') }}</div>
 
     <div class="card-body">
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        {{ __('No widgets to display.') }}
+        <p>There are currently {{ $employeesCount }} employees across {{ $companiesCount }} companies.</p>
     </div>
 </div>

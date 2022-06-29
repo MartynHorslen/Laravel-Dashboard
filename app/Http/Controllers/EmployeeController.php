@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use Illuminate\Validation\Rule;
 
 class EmployeeController extends Controller
 {
@@ -25,8 +26,43 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('list', [
-            'dataObject' => Employee::all(),
+            'dataObject' => Employee::paginate(10),
             'type' => 'employees'
         ]);
+    }
+
+    public function edit(Employee $id)
+    {
+        return view('edit', [
+            'data' => $id,
+            'type' => 'employee'
+        ]);
+    }
+
+    public function update($id)
+    { 
+        $employee = Employee::find($id);
+        $attributes = request()->validate([
+            'first_name' => ['required', 'max:255'],
+            'last_name' => ['required', 'max:255'],
+            'company' => ['required', Rule::exists('companies', 'name'),'max:255'],
+            'email' => ['required', Rule::unique('employees', 'email')->ignore($employee), 'email','max:255'],
+            'phone_number' => ['string']
+        ]);
+
+        $updated = $employee->update($attributes);
+
+        
+        if($updated){
+            return back()->with('success', 'Employee Updated!');
+        } else {
+            return back()->with('error', 'Employee could not be updated.');
+        }
+    }
+
+    public function destroy(Employee $id)
+    {
+            $id->delete();
+            return back()->with('success', 'Employee Deleted!');
     }
 }

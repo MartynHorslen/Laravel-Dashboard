@@ -32,7 +32,12 @@
                             <td class="align-middle">
                                 <span class="d-flex flex-row justify-content-evenly">
                                     <a href="/companies/{{ $data->id }}" class="btn btn-outline-secondary mx-2 py-1 px-2"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="#" class="btn btn-outline-secondary mx-2  py-1 px-2"><i class="fa-solid fa-trash-can"></i></a>
+                                    <form method="POST" action="/companies/{{ $data->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    
+                                    <button class="btn btn-outline-secondary mx-2  py-1 px-2" onclick="return confirm('Are you sure you want to delete {{ $data->name }}')"><i class="fa-solid fa-trash-can"></i></button>
+                                    </form>
                                 </span>
                             </td>
                         </tr>
@@ -48,9 +53,14 @@
                             <td class="align-middle">{{ $data->email }}</td>
                             <td class="align-middle">{{ $data->phone_number }}</td>
                             <td class="align-middle">
-                                <span class="d-flex flex-row justify-content-evenly">
-                                    <a href="#" class="btn btn-outline-secondary mx-2 py-1 px-2"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="#" class="btn btn-outline-secondary mx-2  py-1 px-2"><i class="fa-solid fa-trash-can"></i></a>
+                            <span class="d-flex flex-row justify-content-evenly">
+                                    <a href="/employees/{{ $data->id }}" class="btn btn-outline-secondary mx-2 py-1 px-2"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <form method="POST" action="/employees/{{ $data->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    
+                                    <button class="btn btn-outline-secondary mx-2  py-1 px-2" onclick="return confirm('Are you sure you want to delete {{ $data->first_name }} {{ $data->last_name }}')"><i class="fa-solid fa-trash-can"></i></button>
+                                    </form>
                                 </span>
                             </td>
                         </tr>

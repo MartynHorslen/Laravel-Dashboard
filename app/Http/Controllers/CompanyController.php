@@ -27,7 +27,7 @@ class CompanyController extends Controller
     public function index()
     {
         return view('list', [
-            'dataObject' => Company::all(),
+            'dataObject' => Company::paginate(10),
             'type' => 'companies'
         ]);
     }
@@ -40,22 +40,33 @@ class CompanyController extends Controller
         ]);
     }
     
-    public function update(Company $company)
+    public function update($id)
     { 
+        $company = Company::find($id);
         $attributes = request()->validate([
             'name' => ['required', Rule::unique('companies', 'name')->ignore($company)],
             'logo' => 'image',
-            'website' => '',
-            'email' => ''
+            'website' => 'max:255',
+            'email' => ['required', Rule::unique('companies', 'email')->ignore($company), 'email','max:255'],
         ]);
         
         if(isset($attributes['logo'])){
-            $attributes['logo'] = request()->file('logo')->store('logo');
+            $attributes['logo'] = '/storage/' . request()->file('logo')->store('logo');
         }
 
-        $update = $company->update($attributes);
-        ddd($update);
+        $updated = $company->update($attributes);
 
-        return back();
+
+        if($updated){
+            return back()->with('success', 'Company Updated!');
+        } else {
+            return back()->with('error', 'Company could not be updated.');
+        }        
+    }
+
+    public function destroy(Company $id)
+    {
+            $id->delete();
+            return back()->with('success', 'Company Deleted!');
     }
 }
