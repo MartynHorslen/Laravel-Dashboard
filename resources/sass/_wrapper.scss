@@ -6,7 +6,7 @@
         flex: 1;
         width: 100%;
         .table-responsive {
-            max-height: 400px;
+            max-height: calc(100vh - 250px);
         }
     }
 }
