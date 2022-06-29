@@ -39,9 +39,6 @@ You don't have to answer all the questions - just the ones relevant to your proj
 - Toast notifications.
 
 ## Room for Improvement
-Improvement:
-- A company page that lists all the employees in that company.
-
 To do:
 - Delete employees when you delete a company they are associated with.
 - Filter by column names.
@@ -49,7 +46,10 @@ To do:
 - Logo validation to include 100px x 100px minimum requirement.
 - Test all form validations.
 
-Known Bugs:
+Improvement ideas:
+- A company page that lists all the employees in that company.
+
+<!-- Known Bugs: -->
 
 <!-- ## Screenshots
 ![Companies Page](https://i.gyazo.com/67260a7c1c74ad4b48b299e1d4e4fd23.png) -->
