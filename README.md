@@ -31,7 +31,12 @@ You don't have to answer all the questions - just the ones relevant to your proj
 
 
 ## Completed Features
-- Navbar & Initial Login/Dashboard routing based on Guest/Auth. 24/06 (Just a placeholder feature for now.)
+- Side bar navigation that's hideable in small view widths.
+- A page that lists all companies with the functionality to edit and delete.
+- A page that lists all employees of all companies with the functionality to edit and delete.
+- Pagination for both lists.
+- Forms to edit records.
+- Toast notifications.
 
 ## Room for Improvement
 Improvement:
