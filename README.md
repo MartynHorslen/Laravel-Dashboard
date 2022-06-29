@@ -1,7 +1,7 @@
 # Laravel Dashboard
 > This project is to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and employees.
 > The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use laravel storage with public access to logos (need to research exactly what this is called and how to do it again), use the 7 RESTful actions, 
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_](https://martyn-horslen.netmatters-scs.co.uk/laravel-dashboard/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 <!-- ## Table of Contents -->
 <!-- * [General Info](#general-information) -->
@@ -35,14 +35,19 @@ You don't have to answer all the questions - just the ones relevant to your proj
 
 ## Room for Improvement
 Improvement:
+- A company page that lists all the employees in that company.
 
 To do:
-- Sidebar menu active page link styling
+- Delete employees when you delete a company they are associated with.
+- Filter by column names.
+- Add a create option for adding companies and employees.
+- Logo validation to include 100px x 100px minimum requirement.
+- Test all form validations.
 
 Known Bugs:
 
-## Screenshots
-![Companies Page](https://i.gyazo.com/67260a7c1c74ad4b48b299e1d4e4fd23.png)
+<!-- ## Screenshots
+![Companies Page](https://i.gyazo.com/67260a7c1c74ad4b48b299e1d4e4fd23.png) -->
 
 
 <!-- ## Setup

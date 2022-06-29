@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row justify-content-center">
+    <div class="row mx-auto">
         <div class="col-12">
         <h1 class="mb-4">{{ ucwords($type) }}</h1>
             <div class="table-responsive">
