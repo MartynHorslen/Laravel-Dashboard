@@ -37,12 +37,12 @@ You don't have to answer all the questions - just the ones relevant to your proj
 - Pagination for both lists.
 - Forms to edit records.
 - Toast notifications.
+- A create button for adding companies and employees.
 
 ## Room for Improvement
 To do:
 - Delete employees when you delete a company they are associated with.
 - Filter by column names.
-- Add a create option for adding companies and employees.
 - Logo validation to include 100px x 100px minimum requirement.
 - Test all form validations.
 
