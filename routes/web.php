@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
-//['register' => false]
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index']);
 Route::post('/companies', [App\Http\Controllers\CompanyController::class, 'store']);
