@@ -26,8 +26,18 @@ class CompanyController extends Controller
      */
     public function index()
     {
+        if (request('order-by')) {
+            if (request('order') === 'asc') {
+                $companies = Company::orderBy('name', 'asc')->paginate(10);
+            } else {
+                $companies = Company::orderBy('name', 'desc')->paginate(10);
+            }
+        } else {
+            $companies = Company::paginate(10);
+        }
+        
         return view('list', [
-            'dataObject' => Company::paginate(10),
+            'dataObject' => $companies,
             'type' => 'companies'
         ]);
     }

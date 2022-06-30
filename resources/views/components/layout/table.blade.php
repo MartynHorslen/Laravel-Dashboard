@@ -17,15 +17,23 @@
                     <thead>
                     @if ($type === 'companies')
                         <th scope="col">Logo</th>
-                        <th scope="col">Company</th>
+                        <th scope="col">
+                            @if (request('order') === 'desc')
+                                <a class="text-decoration-none" href="?order-by=name&order=asc">Company <i class="fa-solid fa-arrow-up-z-a"></i></a>
+                            @elseif (request('order') === 'asc')
+                                <a class="text-decoration-none" href="?order-by=name&order=desc">Company <i class="fa-solid fa-arrow-down-a-z"></i></a>
+                            @else 
+                                <a class="text-decoration-none" href="?order-by=name&order=asc">Company</a>
+                            @endif
+                        </th>
                         <th scope="col">Email</th>
                         <th scope="col">Website</th>
                     @endif
 
                     @if ($type === 'employees')
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Company</th>
+                        <th scope="col"><a href="?order-by=first-name">First Name</th>
+                        <th scope="col"><a href="?order-by=last-name">Last Name</th>
+                        <th scope="col"><a href="?order-by=name">Company</th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone Number</th>
                     @endif 
