@@ -31,6 +31,36 @@ class EmployeeController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('create', [
+            'type' => 'employee'
+        ]);
+    }
+
+    public function store()
+    {
+        $attributes = request()->validate([
+            'first_name' => ['required', 'max:255'],
+            'last_name' => ['required', 'max:255'],
+            'company' => ['required', Rule::exists('companies', 'name'),'max:255'],
+            'email' => ['required', Rule::unique('employees', 'email'), 'email','max:255'],
+            'phone_number' => ['string']
+        ]);
+
+        $created = Employee::create($attributes);
+
+        
+        if($created){
+            session()->flash('success', 'Employee Created!');
+            return redirect('/employees');
+            
+        } else {
+            session()->flash('error', 'Employee could not be created.');
+            return redirect('/employees/create');
+        }
+    }
+
     public function edit(Employee $id)
     {
         return view('edit', [

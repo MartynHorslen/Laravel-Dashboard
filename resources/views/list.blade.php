@@ -7,4 +7,4 @@
     <div class="pt-4">{{ $dataObject->links() }}</div>
 </x-layout.wrapper>
 
-<vendor.pagination.bootstr
+<x-notifications.notification></x-layout.notifications.notification>

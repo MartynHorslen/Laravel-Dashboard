@@ -68,7 +68,7 @@
   width: calc(100% - 110px);
 }
 .wrapper #app .table-responsive {
-  max-height: calc(100vh - 250px);
+  max-height: calc(100vh - 300px);
 }
 
 thead {

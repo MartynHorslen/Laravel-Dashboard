@@ -32,6 +32,37 @@ class CompanyController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('create', [
+            'type' => 'company'
+        ]);
+    }
+
+    public function store()
+    {
+        $attributes = request()->validate([
+            'name' => ['required', Rule::unique('companies', 'name')],
+            'logo' => 'image',
+            'website' => 'max:255',
+            'email' => ['required', Rule::unique('companies', 'email'), 'email','max:255'],
+        ]);
+        
+        if(isset($attributes['logo'])){
+            $attributes['logo'] = '/storage/' . request()->file('logo')->store('logo');
+        }
+
+        $created = Company::create($attributes);
+
+        if($created){
+            session()->flash('success', 'Company Created!');
+            return redirect('/companies');
+        } else {
+            session()->flash('success', 'Company could not be created!');
+            return redirect('/companies/create');
+        }  
+    }
+
     public function edit(Company $id)
     {
         return view('edit', [

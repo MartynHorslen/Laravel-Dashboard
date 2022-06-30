@@ -19,11 +19,15 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Auth::routes();
 
 Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index']);
+Route::post('/companies', [App\Http\Controllers\CompanyController::class, 'store']);
+Route::get('/companies/create', [App\Http\Controllers\CompanyController::class, 'create']);
 Route::get('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'edit']);
 Route::patch('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'update']);
 Route::delete('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'destroy']);
 
 Route::get('/employees', [App\Http\Controllers\EmployeeController::class, 'index']);
+Route::post('/employees', [App\Http\Controllers\EmployeeController::class, 'store']);
+Route::get('/employees/create', [App\Http\Controllers\EmployeeController::class, 'create']);
 Route::get('/employees/{id}', [App\Http\Controllers\EmployeeController::class, 'edit']);
 Route::patch('/employees/{id}', [App\Http\Controllers\EmployeeController::class, 'update']);
 Route::delete('/employees/{id}', [App\Http\Controllers\EmployeeController::class, 'destroy']);

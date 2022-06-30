@@ -1,7 +1,17 @@
 <div class="container-fluid">
     <div class="row mx-auto">
         <div class="col-12">
-        <h1 class="mb-4">{{ ucwords($type) }}</h1>
+            <div class="d-flex flex-row justify-content-between mb-4">
+                <h1 class="mb-0">{{ ucwords($type) }}</h1>
+                <a class="btn btn-primary my-auto" href="{{ $type }}/create">
+                    Create 
+                    @if ($type === 'companies')
+                        Company
+                    @elseif ($type === 'employees')
+                        Employee
+                    @endif
+                </a>
+            </div>
             <div class="table-responsive">
                 <table class="table table-hover table-bordered position-relative"> 
                     <thead>
