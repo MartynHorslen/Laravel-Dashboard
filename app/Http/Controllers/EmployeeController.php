@@ -12,6 +12,8 @@ class EmployeeController extends Controller
      *
      * @return void
      */
+
+    
     
     public function __construct()
     {
@@ -23,10 +25,12 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Employee $employee)
     {
+        $employees = $employee->sortable()->paginate(10);
+
         return view('list', [
-            'dataObject' => Employee::paginate(10),
+            'dataObject' => $employees,
             'type' => 'employees'
         ]);
     }

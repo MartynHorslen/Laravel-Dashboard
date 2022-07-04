@@ -24,17 +24,9 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Company $company)
     {
-        if (request('order-by')) {
-            if (request('order') === 'asc') {
-                $companies = Company::orderBy('name', 'asc')->paginate(10);
-            } else {
-                $companies = Company::orderBy('name', 'desc')->paginate(10);
-            }
-        } else {
-            $companies = Company::paginate(10);
-        }
+        $companies = $company->sortable()->paginate(10);
         
         return view('list', [
             'dataObject' => $companies,
