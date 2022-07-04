@@ -31,7 +31,7 @@
                         <div class="d-flex flex-row my-2 align-items-center">
                             <input id="logo" name="logo" class="w-100 mx-2" type="file"/>
                         </div>
-
+                        
                         <div class="d-flex flex-row justify-content-between mt-3">
                             <a href="/companies" class="btn btn-danger">Cancel</a>
                             
@@ -61,7 +61,16 @@
                         <input id="last_name" name="last_name" class="w-100" type="text" value="{{ old('last_name') }}" required/>
 
                         <label for="company">Company:</label>
-                        <input id="company" name="company" class="w-100" type="text" value="{{ old('company') }}"/>
+                        <select name="company" id="company" class="w-100">
+                                <option class="w-100" disabled selected>Select a company</option>
+                            @foreach($companies as $company)
+                                <option class="w-100"
+                                @if($company->company === old('company'))
+                                    selected="selected"
+                                @endif
+                                >{{ $company->company }}</option>
+                            @endforeach
+                        </select>
 
                         <label for="email">Email:</label>
                         <input id="email" name="email" class="w-100" type="text" value="{{ old('email') }}"/>

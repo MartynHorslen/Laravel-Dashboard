@@ -37,7 +37,8 @@ class CompanyController extends Controller
     public function create()
     {
         return view('create', [
-            'type' => 'company'
+            'type' => 'company',
+            'companies' => null
         ]);
     }
 
@@ -69,7 +70,8 @@ class CompanyController extends Controller
     {
         return view('edit', [
             'data' => $id,
-            'type' => 'company'
+            'type' => 'company',
+            'companies' => null
         ]);
     }
     
@@ -77,10 +79,10 @@ class CompanyController extends Controller
     { 
         $company = Company::find($id);
         $attributes = request()->validate([
-            'name' => ['required', Rule::unique('companies', 'name'), 'min:2', 'max:255'],
+            'name' => ['required', Rule::unique('companies', 'name')->ignore($id), 'min:2', 'max:255'],
             'logo' => 'image|dimensions:min_width=100,min_height=100',
             'website' => ['max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
-            'email' => ['required', Rule::unique('companies', 'email'), 'email', 'min:2', 'max:255'],
+            'email' => ['required', Rule::unique('companies', 'email')->ignore($id), 'email', 'min:2', 'max:255'],
         ]);
         
         if(isset($attributes['logo'])){

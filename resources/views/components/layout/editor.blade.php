@@ -63,8 +63,19 @@
                         <label for="last_name">Last Name:</label>
                         <input id="last_name" name="last_name" class="w-100" type="text" value="{{ old('last_name', $data->last_name) }}" required/>
 
+                        <!-- <label for="company">Company:</label>
+                        <input id="company" name="company" class="w-100" type="text" value="{{ old('company', $data->company) }}"/> -->
+
                         <label for="company">Company:</label>
-                        <input id="company" name="company" class="w-100" type="text" value="{{ old('company', $data->company) }}"/>
+                        <select name="company" id="company" class="w-100">
+                            @foreach($companies as $company)
+                                <option class="w-100"
+                                @if($company->company === old('company', $data->company))
+                                    selected="selected"
+                                @endif
+                                >{{ $company->company }}</option>
+                            @endforeach
+                        </select>
 
                         <label for="email">Email:</label>
                         <input id="email" name="email" class="w-100" type="text" value="{{ old('email', $data->email) }}"/>

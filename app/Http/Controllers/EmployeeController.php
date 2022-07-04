@@ -37,8 +37,10 @@ class EmployeeController extends Controller
 
     public function create()
     {
+        $companies = Employee::select('company')->distinct()->get();
         return view('create', [
-            'type' => 'employee'
+            'type' => 'employee',
+            'companies' => $companies
         ]);
     }
 
@@ -49,7 +51,7 @@ class EmployeeController extends Controller
             'last_name' => ['required', 'min:2', 'max:255'],
             'company' => ['required', Rule::exists('companies', 'name')],
             'email' => ['required', Rule::unique('employees', 'email'), 'email', 'max:255'],
-            'phone_number' => 'required|regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/'
+            'phone_number' => ['required', 'regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/']
         ]);
 
         $created = Employee::create($attributes);
@@ -67,9 +69,11 @@ class EmployeeController extends Controller
 
     public function edit(Employee $id)
     {
+        $companies = Employee::select('company')->distinct()->get();
         return view('edit', [
             'data' => $id,
-            'type' => 'employee'
+            'type' => 'employee',
+            'companies' => $companies
         ]);
     }
 
@@ -80,8 +84,8 @@ class EmployeeController extends Controller
             'first_name' => ['required', 'min:2', 'max:255'],
             'last_name' => ['required', 'min:2', 'max:255'],
             'company' => ['required', Rule::exists('companies', 'name')],
-            'email' => ['required', Rule::unique('employees', 'email'), 'email', 'max:255'],
-            'phone_number' => 'required|regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/'
+            'email' => ['required', Rule::unique('employees', 'email')->ignore($id), 'email', 'max:255'],
+            'phone_number' => ['required', 'regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/']
         ]);
 
         $updated = $employee->update($attributes);
