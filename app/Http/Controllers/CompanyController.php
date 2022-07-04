@@ -45,7 +45,7 @@ class CompanyController extends Controller
     {
         $attributes = request()->validate([
             'name' => ['required', Rule::unique('companies', 'name')],
-            'logo' => 'image',
+            'logo' => 'image|dimensions:min_width=100,min_height=100',
             'website' => 'max:255',
             'email' => ['required', Rule::unique('companies', 'email'), 'email','max:255'],
         ]);
@@ -78,7 +78,7 @@ class CompanyController extends Controller
         $company = Company::find($id);
         $attributes = request()->validate([
             'name' => ['required', Rule::unique('companies', 'name')->ignore($company)],
-            'logo' => 'image',
+            'logo' => 'image|dimensions:min_width=100,min_height=100',
             'website' => 'max:255',
             'email' => ['required', Rule::unique('companies', 'email')->ignore($company), 'email','max:255'],
         ]);

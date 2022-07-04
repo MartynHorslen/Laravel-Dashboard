@@ -27,7 +27,7 @@
                         <label for="website">Website:</label>
                         <input id="website" name="website" class="w-100" type="text" value=""/>
 
-                        <label for="logo">Logo:</label>
+                        <label for="logo">Logo:  (min 100x100)</label>
                         <div class="d-flex flex-row my-2 align-items-center">
                             <input id="logo" name="logo" class="w-100 mx-2" type="file"/>
                         </div>
