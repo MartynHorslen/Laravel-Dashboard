@@ -20,13 +20,13 @@
                         @endif
                         
                         <label for="name">Company Name:</label>
-                        <input id="name" name="name" class="w-100" type="text" value="{{ $data->name }}" required/>
+                        <input id="name" name="name" class="w-100" type="text" value="{{ old('name', $data->name) }}" required/>
 
                         <label for="email">Email:</label>
-                        <input id="email" name="email" class="w-100" type="text" value="{{ $data->email }}"/>
+                        <input id="email" name="email" class="w-100" type="text" value="{{ old('email', $data->email) }}"/>
 
                         <label for="website">Website:</label>
-                        <input id="website" name="website" class="w-100" type="text" value="{{ $data->website }}"/>
+                        <input id="website" name="website" class="w-100" type="text" value="{{ old('website', $data->website) }}"/>
 
                         <label for="logo">Logo: (min 100x100)</label>
                         <div class="d-flex flex-row my-2 align-items-center">
@@ -58,19 +58,19 @@
                         @endif
                         
                         <label for="first_name">First Name:</label>
-                        <input id="first_name" name="first_name" class="w-100" type="text" value="{{ $data->first_name }}" required/>
+                        <input id="first_name" name="first_name" class="w-100" type="text" value="{{ old('first_name', $data->first_name) }}" required/>
                         
                         <label for="last_name">Last Name:</label>
-                        <input id="last_name" name="last_name" class="w-100" type="text" value="{{ $data->last_name }}" required/>
+                        <input id="last_name" name="last_name" class="w-100" type="text" value="{{ old('last_name', $data->last_name) }}" required/>
 
                         <label for="company">Company:</label>
-                        <input id="company" name="company" class="w-100" type="text" value="{{ $data->company }}"/>
+                        <input id="company" name="company" class="w-100" type="text" value="{{ old('company', $data->company) }}"/>
 
                         <label for="email">Email:</label>
-                        <input id="email" name="email" class="w-100" type="text" value="{{ $data->email }}"/>
+                        <input id="email" name="email" class="w-100" type="text" value="{{ old('email', $data->email) }}"/>
 
-                        <label for="phone_number">Email:</label>
-                        <input id="phone_number" name="phone_number" class="w-100" type="text" value="{{ $data->phone_number }}"/>
+                        <label for="phone_number">Telephone Number:</label>
+                        <input id="phone_number" name="phone_number" class="w-100" type="text" value="{{ old('phone_number', $data->phone_number) }}"/>
 
                         <div class="d-flex flex-row justify-content-between mt-3">
                             <a href="/employees" class="btn btn-danger">Cancel</a>
