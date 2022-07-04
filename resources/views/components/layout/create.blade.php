@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 class="mb-4">Edit {{ ucwords($type) }}:</h1>
+            <h1 class="mb-4">Create {{ ucwords($type) }}:</h1>
             <div class="card">
                 <div class="card-body d-flex flex-col justify-content-center">
                     @if ($type === 'company')
@@ -57,7 +57,7 @@
                         <label for="first_name">First Name:</label>
                         <input id="first_name" name="first_name" class="w-100" type="text" value="" required/>
                         
-                        <label for="last_name">First Name:</label>
+                        <label for="last_name">Last Name:</label>
                         <input id="last_name" name="last_name" class="w-100" type="text" value="" required/>
 
                         <label for="company">Company:</label>

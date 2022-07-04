@@ -60,7 +60,7 @@
                         <label for="first_name">First Name:</label>
                         <input id="first_name" name="first_name" class="w-100" type="text" value="{{ $data->first_name }}" required/>
                         
-                        <label for="last_name">First Name:</label>
+                        <label for="last_name">Last Name:</label>
                         <input id="last_name" name="last_name" class="w-100" type="text" value="{{ $data->last_name }}" required/>
 
                         <label for="company">Company:</label>
