@@ -16,4 +16,9 @@ class Company extends Model
     public $sortable = [
         'name'
     ];
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }

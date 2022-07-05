@@ -27,7 +27,9 @@ class EmployeeController extends Controller
      */
     public function index(Employee $employee)
     {
-        $employees = $employee->sortable()->paginate(10);
+        // $companies = Employee::all()->load('company')->paginate(10);
+        $employees = Employee::with('company')->sortable()->paginate(10);
+        // $employees = $employee->sortable()->paginate(10);
 
         return view('list', [
             'dataObject' => $employees,

@@ -67,7 +67,7 @@
                         <tr>
                             <td class="align-middle" scope="row">{{ $data->first_name }}</td>
                             <td class="align-middle">{{ $data->last_name }}</td>
-                            <td class="align-middle">{{ $data->company }}</td>
+                            <td class="align-middle">{{ $data->company->name }}</td>
                             <td class="align-middle">{{ $data->email }}</td>
                             <td class="align-middle">{{ $data->phone_number }}</td>
                             <td class="align-middle">

@@ -17,9 +17,9 @@ class CreateEmployeesTable extends Migration
             $table->id();
             $table->string('first_name')->required();
             $table->string('last_name')->required();
-            $table->string('company');
-            $table->string('email');
-            $table->string('phone_number');
+            $table->foreignId('company_id')->required();
+            $table->string('email')->required();
+            $table->string('phone_number')->required();
             $table->timestamps();
         });
     }
