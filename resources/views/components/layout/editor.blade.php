@@ -19,10 +19,10 @@
                             </div>
                         @endif
                         
-                        <label for="name">Company Name:</label>
+                        <label for="name">Company Name: (required)</label>
                         <input id="name" name="name" class="w-100" type="text" value="{{ old('name', $data->name) }}" required/>
 
-                        <label for="email">Email:</label>
+                        <label for="email">Email: (required)</label>
                         <input id="email" name="email" class="w-100" type="text" value="{{ old('email', $data->email) }}"/>
 
                         <label for="website">Website:</label>
@@ -57,16 +57,13 @@
                             </div>
                         @endif
                         
-                        <label for="first_name">First Name:</label>
+                        <label for="first_name">First Name: (required)</label>
                         <input id="first_name" name="first_name" class="w-100" type="text" value="{{ old('first_name', $data->first_name) }}" required/>
                         
-                        <label for="last_name">Last Name:</label>
+                        <label for="last_name">Last Name: (required)</label>
                         <input id="last_name" name="last_name" class="w-100" type="text" value="{{ old('last_name', $data->last_name) }}" required/>
 
-                        <!-- <label for="company">Company:</label>
-                        <input id="company" name="company" class="w-100" type="text" value="{{ old('company', $data->company) }}"/> -->
-
-                        <label for="company">Company:</label>
+                        <label for="company">Company: (required)</label>
                         <select name="company" id="company" class="w-100">
                             @foreach($companies as $company)
                                 <option class="w-100"
@@ -77,10 +74,10 @@
                             @endforeach
                         </select>
 
-                        <label for="email">Email:</label>
+                        <label for="email">Email: (required)</label>
                         <input id="email" name="email" class="w-100" type="text" value="{{ old('email', $data->email) }}"/>
 
-                        <label for="phone_number">Telephone Number:</label>
+                        <label for="phone_number">Telephone Number: (required)</label>
                         <input id="phone_number" name="phone_number" class="w-100" type="text" value="{{ old('phone_number', $data->phone_number) }}"/>
 
                         <div class="d-flex flex-row justify-content-between mt-3">

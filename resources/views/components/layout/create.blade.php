@@ -21,13 +21,13 @@
                         <label for="name">Company Name: (required)</label>
                         <input id="name" name="name" class="w-100" type="text" value="{{ old('name') }}" required/>
 
-                        <label for="email">Email:</label>
+                        <label for="email">Email: (required)</label>
                         <input id="email" name="email" class="w-100" type="text" value="{{ old('email') }}"/>
 
                         <label for="website">Website:</label>
                         <input id="website" name="website" class="w-100" type="text" value="{{ old('website') }}"/>
 
-                        <label for="logo">Logo:  (min 100x100)</label>
+                        <label for="logo">Logo:  (min 100x100, required)</label>
                         <div class="d-flex flex-row my-2 align-items-center">
                             <input id="logo" name="logo" class="w-100 mx-2" type="file"/>
                         </div>
@@ -54,13 +54,13 @@
                             </div>
                         @endif
                         
-                        <label for="first_name">First Name:</label>
+                        <label for="first_name">First Name: (required)</label>
                         <input id="first_name" name="first_name" class="w-100" type="text" value="{{ old('first_name') }}" required/>
                         
-                        <label for="last_name">Last Name:</label>
+                        <label for="last_name">Last Name: (required)</label>
                         <input id="last_name" name="last_name" class="w-100" type="text" value="{{ old('last_name') }}" required/>
 
-                        <label for="company">Company:</label>
+                        <label for="company">Company: (required)</label>
                         <select name="company" id="company" class="w-100">
                                 <option class="w-100" disabled selected>Select a company</option>
                             @foreach($companies as $company)
@@ -72,10 +72,10 @@
                             @endforeach
                         </select>
 
-                        <label for="email">Email:</label>
+                        <label for="email">Email: (required)</label>
                         <input id="email" name="email" class="w-100" type="text" value="{{ old('email') }}"/>
 
-                        <label for="phone_number">Telephone Number:</label>
+                        <label for="phone_number">Telephone Number: (required)</label>
                         <input id="phone_number" name="phone_number" class="w-100" type="text" value="{{ old('phone_number') }}"/>
 
                         <div class="d-flex flex-row justify-content-between mt-3">
