@@ -64,13 +64,13 @@
                         <input id="last_name" name="last_name" class="w-100" type="text" value="{{ old('last_name', $data->last_name) }}" required/>
 
                         <label for="company">Company: (required)</label>
-                        <select name="company" id="company" class="w-100">
+                        <select name="company_id" id="company" class="w-100">
                             @foreach($companies as $company)
                                 <option class="w-100"
-                                @if($company->company === old('company', $data->company))
+                                @if($company->company === old('company', $data->company->name))
                                     selected="selected"
                                 @endif
-                                >{{ $company->company }}</option>
+                                value="{{ $company->company_id }}">{{ $company->company->name }}</option>
                             @endforeach
                         </select>
 

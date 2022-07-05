@@ -54,7 +54,7 @@
                                     @csrf
                                     @method('DELETE')
                                     
-                                    <button class="btn btn-outline-secondary mx-2  py-1 px-2" onclick="return confirm('Are you sure you want to delete {{ $data->name }}')"><i class="fa-solid fa-trash-can"></i></button>
+                                    <button class="btn btn-outline-secondary mx-2  py-1 px-2" onclick="return confirm('Are you sure you want to delete {{ $data->name }} and all associated employees?')"><i class="fa-solid fa-trash-can"></i></button>
                                     </form>
                                 </span>
                             </td>

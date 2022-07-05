@@ -28,9 +28,8 @@ class EmployeeController extends Controller
     public function index(Employee $employee)
     {
         // $companies = Employee::all()->load('company')->paginate(10);
-        $employees = Employee::with('company')->sortable()->paginate(10);
+        $employees = $employee->with('company')->sortable()->paginate(10);
         // $employees = $employee->sortable()->paginate(10);
-
         return view('list', [
             'dataObject' => $employees,
             'type' => 'employees'
@@ -39,7 +38,7 @@ class EmployeeController extends Controller
 
     public function create()
     {
-        $companies = Employee::select('company')->distinct()->get();
+        $companies = Employee::select('company_id')->with('company')->distinct()->get();
         return view('create', [
             'type' => 'employee',
             'companies' => $companies
@@ -51,7 +50,7 @@ class EmployeeController extends Controller
         $attributes = request()->validate([
             'first_name' => ['required', 'min:2', 'max:255'],
             'last_name' => ['required', 'min:2', 'max:255'],
-            'company' => ['required', Rule::exists('companies', 'name')],
+            'company_id' => ['required', Rule::exists('companies', 'id')],
             'email' => ['required', Rule::unique('employees', 'email'), 'email', 'max:255'],
             'phone_number' => ['required', 'regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/']
         ]);
@@ -71,7 +70,7 @@ class EmployeeController extends Controller
 
     public function edit(Employee $id)
     {
-        $companies = Employee::select('company')->distinct()->get();
+        $companies = Employee::select('company_id')->distinct()->get();
         return view('edit', [
             'data' => $id,
             'type' => 'employee',
@@ -85,7 +84,7 @@ class EmployeeController extends Controller
         $attributes = request()->validate([
             'first_name' => ['required', 'min:2', 'max:255'],
             'last_name' => ['required', 'min:2', 'max:255'],
-            'company' => ['required', Rule::exists('companies', 'name')],
+            'company_id' => ['required', Rule::exists('companies', 'id')],
             'email' => ['required', Rule::unique('employees', 'email')->ignore($id), 'email', 'max:255'],
             'phone_number' => ['required', 'regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/']
         ]);

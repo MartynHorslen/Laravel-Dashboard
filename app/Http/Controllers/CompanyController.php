@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use App\Models\Employee;
 use Illuminate\Validation\Rules\Unique;
 use Illuminate\Validation\Rule;
 
@@ -100,8 +101,9 @@ class CompanyController extends Controller
     }
 
     public function destroy(Company $id)
-    {
-            $id->delete();
-            return back()->with('success', 'Company Deleted!');
+    {  
+        $id->delete();
+        Employee::where('company_id', $id->id)->delete();
+        return back()->with('success', 'Company Deleted!');
     }
 }

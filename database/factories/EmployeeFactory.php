@@ -23,7 +23,7 @@ class EmployeeFactory extends Factory
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
-            'phone_number' => $this->faker->unique()->phoneNumber(),
+            'phone_number' => $this->faker->unique()->numerify('0##########'),
             'company_id' => $companies->pluck('id')->random()
         ];
     }
