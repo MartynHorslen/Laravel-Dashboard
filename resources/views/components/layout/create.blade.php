@@ -65,10 +65,10 @@
                                 <option class="w-100" disabled selected>Select a company</option>
                             @foreach($companies as $company)
                                 <option class="w-100"
-                                @if($company->company === old('company'))
+                                @if($company->name === old('company'))
                                     selected="selected"
                                 @endif
-                                value="{{ $company->company_id }}">{{ $company->company->name }}</option>
+                                value="{{ $company->id }}">{{ $company->name }}</option>
                             @endforeach
                         </select>
 

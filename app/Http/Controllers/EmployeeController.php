@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use Illuminate\Validation\Rule;
+use App\Models\Company;
 
 class EmployeeController extends Controller
 {
@@ -36,7 +37,7 @@ class EmployeeController extends Controller
 
     public function create()
     {
-        $companies = Employee::select('company_id')->with('company')->distinct()->get();
+        $companies = Company::select('name')->distinct()->orderBy('name')->get();
         return view('create', [
             'type' => 'employee',
             'companies' => $companies
@@ -68,7 +69,7 @@ class EmployeeController extends Controller
 
     public function edit(Employee $id)
     {
-        $companies = Employee::select('company_id')->distinct()->get();
+        $companies = Company::select(['id', 'name'])->distinct()->orderBy('name')->get();
         return view('edit', [
             'data' => $id,
             'type' => 'employee',

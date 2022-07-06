@@ -16,7 +16,7 @@ class Employee extends Model
     public $sortable = [
         'first_name',
         'last_name',
-        'company'
+        'company.name'
     ];
 
     public function company()

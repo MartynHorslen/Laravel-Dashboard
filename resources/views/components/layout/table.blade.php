@@ -32,7 +32,7 @@
                             @sortablelink('last_name', 'Last Name', ['order-by' => 'last-name'])
                         </th>
                         <th scope="col">
-                            @sortablelink('company', 'Company', ['order-by' => 'company'])
+                            @sortablelink('company.name', 'Company', ['order-by' => 'name'])
                         </th>
                         <th scope="col">Email</th>
                         <th scope="col">Phone Number</th>
