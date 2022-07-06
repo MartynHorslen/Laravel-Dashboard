@@ -32,6 +32,7 @@ You don't have to answer all the questions - just the ones relevant to your proj
 
 
 ## Completed Features
+- Login and Authentication.
 - Side bar navigation that's hideable in small view widths.
 - A page that lists all companies with the functionality to create, edit and delete.
 - A page that lists all employees of all companies with the functionality to create, edit and delete.
@@ -42,11 +43,13 @@ You don't have to answer all the questions - just the ones relevant to your proj
 - Sortable columns on lists.
 - Deletion of employees upon deletion of the compnay they are related to.
 - Image file upload and storage.
+- Dashboard widget that shows the number of companies and employees.
 
 ## Room for Improvement
 <!-- To do: -->
 Improvement ideas:
 - A company page that lists all the employees in that company.
+- Refactor sidebar links into a component.
 
 <!-- Known Bugs: -->
 

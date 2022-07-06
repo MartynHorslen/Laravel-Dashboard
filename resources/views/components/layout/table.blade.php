@@ -37,7 +37,6 @@
                         <th scope="col">Email</th>
                         <th scope="col">Phone Number</th>
                     @endif 
-                        <th></th>
                     </thead>
                     <tbody>
                     @if ($type === 'companies')
@@ -71,7 +70,7 @@
                             <td class="align-middle">{{ $data->email }}</td>
                             <td class="align-middle">{{ $data->phone_number }}</td>
                             <td class="align-middle">
-                            <span class="d-flex flex-row justify-content-evenly">
+                                <span class="d-flex flex-row justify-content-evenly">
                                     <a href="/employees/{{ $data->id }}" class="btn btn-outline-secondary mx-2 py-1 px-2"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <form method="POST" action="/employees/{{ $data->id }}">
                                     @csrf
