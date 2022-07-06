@@ -50,6 +50,7 @@ You don't have to answer all the questions - just the ones relevant to your proj
 Improvement ideas:
 - A company page that lists all the employees in that company.
 - Refactor sidebar links into a component.
+- Delete logo image files when deleting a company.
 
 <!-- Known Bugs: -->
 
