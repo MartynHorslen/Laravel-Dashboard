@@ -1,6 +1,6 @@
 # Laravel Dashboard
-> This project is to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and employees.
-> The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use laravel storage with public access to logos (need to research exactly what this is called and how to do it again), use the 7 RESTful actions, 
+> This project is to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and employees.<br />
+> The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use laravel storage with public access to logosand use the 7 RESTful actions. <br />
 > Live demo [_here_](https://martyn-horslen.netmatters-scs.co.uk/laravel-dashboard/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 <!-- ## Table of Contents -->
@@ -28,24 +28,23 @@ You don't have to answer all the questions - just the ones relevant to your proj
 ## Technologies Used
 - Laravel - version 9.18.0
 - Bootstrap - version 5.1.3
+- SCSS
 
 
 ## Completed Features
 - Side bar navigation that's hideable in small view widths.
-- A page that lists all companies with the functionality to edit and delete.
-- A page that lists all employees of all companies with the functionality to edit and delete.
+- A page that lists all companies with the functionality to create, edit and delete.
+- A page that lists all employees of all companies with the functionality to create, edit and delete.
 - Pagination for both lists.
 - Forms to edit records.
 - Toast notifications.
 - A create button for adding companies and employees.
+- Sortable columns on lists.
+- Deletion of employees upon deletion of the compnay they are related to.
+- Image file upload and storage.
 
 ## Room for Improvement
-To do:
-- Delete employees when you delete a company they are associated with.
-- Filter by column names.
-- Logo validation to include 100px x 100px minimum requirement.
-- Test all form validations.
-
+<!-- To do: -->
 Improvement ideas:
 - A company page that lists all the employees in that company.
 
