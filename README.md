@@ -1,7 +1,7 @@
 # Laravel Dashboard
 > This project is to build an admin dashboard that would allow a hypothetical company to create, read, update and delete (CRUD functionality) records for client companies and employees.<br />
-> The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use laravel storage with public access to logosand use the 7 RESTful actions. <br />
-> Live demo [_here_](https://martyn-horslen.netmatters-scs.co.uk/laravel-dashboard/). <!-- If you have the project hosted somewhere, include the link here. -->
+> The Laravel app itself should have: basic authorisation, make use of database seeders and migrations, use laravel storage with public access to logos and use the 7 RESTful actions. <br />
+> Live demo [_here_](https://laravel-dashboard.martyn-horslen.netmatters-scs.co.uk/). <!-- If you have the project hosted somewhere, include the link here. -->
 
 <!-- ## Table of Contents -->
 <!-- * [General Info](#general-information) -->
