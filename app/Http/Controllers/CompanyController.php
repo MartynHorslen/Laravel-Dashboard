@@ -48,7 +48,7 @@ class CompanyController extends Controller
         $attributes = request()->validate([
             'name' => ['required', Rule::unique('companies', 'name'), 'min:2', 'max:255'],
             'logo' => 'required|image|dimensions:min_width=100,min_height=100',
-            'website' => ['max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
+            'website' => ['max:255', 'url'],
             'email' => ['required', Rule::unique('companies', 'email'), 'email', 'min:2', 'max:255'],
         ]);
         
@@ -82,7 +82,7 @@ class CompanyController extends Controller
         $attributes = request()->validate([
             'name' => ['required', Rule::unique('companies', 'name')->ignore($id), 'min:2', 'max:255'],
             'logo' => 'image|dimensions:min_width=100,min_height=100',
-            'website' => ['nullable', 'max:255', 'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'],
+            'website' => ['nullable', 'max:255', 'url'],
             'email' => ['required', Rule::unique('companies', 'email')->ignore($id), 'email', 'min:2', 'max:255'],
         ]);
         

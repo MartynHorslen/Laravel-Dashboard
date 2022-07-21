@@ -7,29 +7,31 @@
                     @if ($type === 'company')
                     <form class="col-8" method="POST" action="/companies" enctype="multipart/form-data">
                         @csrf
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul class="mb-0">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
                         
-                        <label for="name">Company Name: (required)</label>
-                        <input id="name" name="name" class="w-100" type="text" value="{{ old('name') }}" required/>
+                        <label for="name">Company Name: <span class="text-danger">*</span></label>
+                        @if ($errors->first('name'))
+                            <span class="text-danger d-block">{{ $errors->first('name') }}</span>
+                        @endif
+                        <input id="name" name="name" class="form-control w-100 mb-2" type="text" value="{{ old('name') }}" required/>
 
-                        <label for="email">Email: (required)</label>
-                        <input id="email" name="email" class="w-100" type="text" value="{{ old('email') }}"/>
+                        <label for="email">Email: <span class="text-danger">*</span></label>
+                        @if ($errors->first('email'))
+                            <span class="text-danger d-block">{{ $errors->first('email') }}</span>
+                        @endif
+                        <input id="email" name="email" class="form-control w-100 mb-2" type="text" value="{{ old('email') }}"/>
 
                         <label for="website">Website:</label>
-                        <input id="website" name="website" class="w-100" type="text" value="{{ old('website') }}"/>
+                        @if ($errors->first('website'))
+                            <span class="text-danger d-block">{{ $errors->first('website') }}</span>
+                        @endif
+                        <input id="website" name="website" class="form-control w-100 mb-2" type="text" value="{{ old('website') }}"/>
 
-                        <label for="logo">Logo:  (min 100x100, required)</label>
-                        <div class="d-flex flex-row my-2 align-items-center">
-                            <input id="logo" name="logo" class="w-100 mx-2" type="file"/>
+                        <label for="logo">Logo: (min 100x100) <span class="text-danger">*</span></label>
+                        @if ($errors->first('logo'))
+                            <span class="text-danger d-block">{{ $errors->first('logo') }}</span>
+                        @endif
+                        <div class="d-flex flex-row align-items-center">
+                            <input id="logo" name="logo" class="form-control w-100" type="file"/>
                         </div>
                         
                         <div class="d-flex flex-row justify-content-between mt-3">
@@ -43,40 +45,45 @@
                     @if ($type === 'employee')
                     <form class="col-8" method="POST" action="/employees">
                         @csrf
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul class="mb-0">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
+                        
+                        <label for="first_name">First Name: <span class="text-danger">*</span></label>
+                        @if ($errors->first('first_name'))
+                            <span class="text-danger d-block">{{ $errors->first('first_name') }}</span>
                         @endif
+                        <input id="first_name" name="first_name" class="form-control w-100 mb-2" type="text" value="{{ old('first_name') }}" required/>
                         
-                        <label for="first_name">First Name: (required)</label>
-                        <input id="first_name" name="first_name" class="w-100" type="text" value="{{ old('first_name') }}" required/>
-                        
-                        <label for="last_name">Last Name: (required)</label>
-                        <input id="last_name" name="last_name" class="w-100" type="text" value="{{ old('last_name') }}" required/>
+                        <label for="last_name">Last Name: <span class="text-danger">*</span></label>
+                        @if ($errors->first('last_name'))
+                            <span class="text-danger d-block">{{ $errors->first('last_name') }}</span>
+                        @endif
+                        <input id="last_name" name="last_name" class="form-control w-100 mb-2" type="text" value="{{ old('last_name') }}" required/>
 
-                        <label for="company">Company: (required)</label>
-                        <select name="company_id" id="company" class="w-100">
+                        <label for="company">Company: <span class="text-danger">*</span></label>
+                        @if ($errors->first('company'))
+                            <span class="text-danger d-block">{{ $errors->first('company') }}</span>
+                        @endif
+                        <select name="company" id="company" class="form-control w-100 mb-2">
                                 <option class="w-100" disabled selected>Select a company</option>
                             @foreach($companies as $company)
                                 <option class="w-100"
-                                @if($company->name === old('company'))
+                                @if($company->id == old('company'))
                                     selected="selected"
                                 @endif
                                 value="{{ $company->id }}">{{ $company->name }}</option>
                             @endforeach
                         </select>
 
-                        <label for="email">Email: (required)</label>
-                        <input id="email" name="email" class="w-100" type="text" value="{{ old('email') }}"/>
+                        <label for="email">Email: <span class="text-danger">*</span></label>
+                        @if ($errors->first('email'))
+                            <span class="text-danger d-block">{{ $errors->first('email') }}</span>
+                        @endif
+                        <input id="email" name="email" class="form-control w-100 mb-2" type="text" value="{{ old('email') }}"/>
 
-                        <label for="phone_number">Telephone Number: (required)</label>
-                        <input id="phone_number" name="phone_number" class="w-100" type="text" value="{{ old('phone_number') }}"/>
+                        <label for="phone_number">Telephone Number: <span class="text-danger">*</span></label>
+                        @if ($errors->first('phone_number'))
+                            <span class="text-danger d-block">{{ $errors->first('phone_number') }}</span>
+                        @endif
+                        <input id="phone_number" name="phone_number" class="form-control w-100" type="text" value="{{ old('phone_number') }}"/>
 
                         <div class="d-flex flex-row justify-content-between mt-3">
                             <a href="/employees" class="btn btn-danger">Cancel</a>
