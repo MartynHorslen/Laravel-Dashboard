@@ -106,4 +106,12 @@ class CompanyController extends Controller
         Employee::where('company_id', $id->id)->delete();
         return back()->with('success', 'Company Deleted!');
     }
+
+    public function show(Company $id)
+    {
+        return view('company', [
+            'data' => $id,
+            'employees' => Employee::all()->where('company_id', $id->id)->sortBy('last_name')
+        ]);
+    }
 }

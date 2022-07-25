@@ -8,7 +8,9 @@
             <x-layout.navbar></x-layout.navbar>
 
             <main class="py-4">
-                {{ $slot }}
+                <div class="container-fluid">
+                    {{ $slot }}
+                </div>
             </main>
             
         </div>

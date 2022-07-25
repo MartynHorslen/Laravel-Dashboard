@@ -24,6 +24,8 @@ Route::get('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'e
 Route::patch('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'update']);
 Route::delete('/companies/{id}', [App\Http\Controllers\CompanyController::class, 'destroy']);
 
+Route::get('/company/{id}', [App\Http\Controllers\CompanyController::class, 'show']);
+
 Route::get('/employees', [App\Http\Controllers\EmployeeController::class, 'index']);
 Route::post('/employees', [App\Http\Controllers\EmployeeController::class, 'store']);
 Route::get('/employees/create', [App\Http\Controllers\EmployeeController::class, 'create']);

@@ -49,7 +49,7 @@ class EmployeeController extends Controller
         $attributes = request()->validate([
             'first_name' => ['required', 'min:2', 'max:255'],
             'last_name' => ['required', 'min:2', 'max:255'],
-            'company' => ['required', Rule::exists('companies', 'id')],
+            'company_id' => ['required', Rule::exists('companies', 'id')],
             'email' => ['required', Rule::unique('employees', 'email'), 'email', 'max:255'],
             'phone_number' => ['required', 'regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/']
         ]);
