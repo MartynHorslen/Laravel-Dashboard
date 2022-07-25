@@ -3,7 +3,7 @@
         <div class="d-flex flex-column align-items-center mb-4">
             <h2>Employees:</h1>
             <div class="table-responsive w-100">
-                <table class="table table-hover table-bordered position-relative"> 
+                <table class="table table-hover table-bordered position-relative w-auto mx-auto"> 
                     <thead>
                         <th scope="col" class="text-nowrap gap-2">
                             First Name
