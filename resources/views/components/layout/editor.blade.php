@@ -20,11 +20,11 @@
                     @endif
                     <input id="email" name="email" class="form-control w-100 mb-2" type="text" value="{{ old('email', $data->email) }}"/>
 
-                    <label for="website">Website:</label>
+                    <label for="website">Website: <span class="text-danger">*</span></label>
                     @if ($errors->first('website'))
                         <span class="text-danger d-block">{{ $errors->first('website') }}</span>
                     @endif
-                    <input id="website" name="website" class="form-control w-100 mb-2" type="text" value="{{ old('website', $data->website) }}"/>
+                    <input id="website" name="website" class="form-control w-100 mb-2" type="text" value="{{ old('website', $data->website) }}" placeholder="https://" />
 
                     <label for="logo">Logo: (min 100x100)</label>
                     @if ($errors->first('logo'))
