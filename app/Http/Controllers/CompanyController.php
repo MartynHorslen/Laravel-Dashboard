@@ -49,7 +49,7 @@ class CompanyController extends Controller
             'name' => ['required', Rule::unique('companies', 'name'), 'min:2', 'max:255'],
             'logo' => 'required|image|dimensions:min_width=100,min_height=100',
             'website' => ['max:255', 'url'],
-            'email' => ['required', Rule::unique('companies', 'email'), 'email', 'min:2', 'max:255'],
+            'email' => ['required', Rule::unique('companies', 'email'), 'email:strict', 'max:255'],
         ]);
         
         if(isset($attributes['logo'])){
@@ -83,7 +83,7 @@ class CompanyController extends Controller
             'name' => ['required', Rule::unique('companies', 'name')->ignore($id), 'min:2', 'max:255'],
             'logo' => 'image|dimensions:min_width=100,min_height=100',
             'website' => ['nullable', 'max:255', 'url'],
-            'email' => ['required', Rule::unique('companies', 'email')->ignore($id), 'email', 'min:2', 'max:255'],
+            'email' => ['required', Rule::unique('companies', 'email')->ignore($id), 'email:strict', 'max:255'],
         ]);
         
         if(isset($attributes['logo'])){
@@ -94,7 +94,8 @@ class CompanyController extends Controller
 
 
         if($updated){
-            return back()->with('success', 'Company Updated!');
+            session()->flash('success', 'Company Updated!');
+            return redirect('/companies');
         } else {
             return back()->with('error', 'Company could not be updated.');
         }        

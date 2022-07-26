@@ -1,5 +1,5 @@
 @auth
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow sticky-top">
     <div class="container-fluid justify-content-md-end mx-md-3">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -50,7 +50,7 @@ class EmployeeController extends Controller
             'first_name' => ['required', 'min:2', 'max:255'],
             'last_name' => ['required', 'min:2', 'max:255'],
             'company_id' => ['required', Rule::exists('companies', 'id')],
-            'email' => ['required', Rule::unique('employees', 'email'), 'email', 'max:255'],
+            'email' => ['required', Rule::unique('employees', 'email'), 'email:strict', 'max:255'],
             'phone_number' => ['required', 'regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/']
         ]);
 
@@ -84,7 +84,7 @@ class EmployeeController extends Controller
             'first_name' => ['required', 'min:2', 'max:255'],
             'last_name' => ['required', 'min:2', 'max:255'],
             'company_id' => ['required', Rule::exists('companies', 'id')],
-            'email' => ['required', Rule::unique('employees', 'email')->ignore($id), 'email', 'max:255'],
+            'email' => ['required', Rule::unique('employees', 'email')->ignore($id), 'email:strict', 'max:255'],
             'phone_number' => ['required', 'regex:/^(?:0|\+?44)(?:\d\s?){9,10}$/']
         ]);
 
@@ -92,7 +92,8 @@ class EmployeeController extends Controller
 
         
         if($updated){
-            return back()->with('success', 'Employee Updated!');
+            session()->flash('success', 'Employee Updated!');
+            return redirect('/employees');
         } else {
             return back()->with('error', 'Employee could not be updated.');
         }

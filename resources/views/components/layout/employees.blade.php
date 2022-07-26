@@ -13,6 +13,7 @@
                         </th>
                         <th scope="col">Email</th>
                         <th scope="col" class="text-nowrap">Phone Number</th>
+                        <th scope="col" class="text-nowrap">Edit/Delete</th>
                     </thead>
                     <tbody>
                     @if($data->count() == 0)
@@ -24,7 +25,7 @@
                             <tr>
                                 <td class="align-middle" scope="row">{{ $employee->first_name }}</td>
                                 <td class="align-middle">{{ $employee->last_name }}</td>
-                                <td class="align-middle">{{ $employee->email }}</td>
+                                <td class="align-middle"><a href="mailto:{{ $employee->email }}">{{ $employee->email }}</a></td>
                                 <td class="align-middle">{{ $employee->phone_number }}</td>
                                 <td class="align-middle">
                                     <span class="d-flex flex-row justify-content-evenly">

@@ -21,6 +21,7 @@
                     </th>
                     <th scope="col">Email</th>
                     <th scope="col">Website</th>
+                    <th scope="col" class="text-nowrap">Edit/Delete</th>
                 @endif
 
                 @if ($type === 'employees')
@@ -35,6 +36,7 @@
                     </th>
                     <th scope="col">Email</th>
                     <th scope="col" class="text-nowrap gap-2">Phone Number</th>
+                    <th scope="col" class="text-nowrap">Edit/Delete</th>
                 @endif 
                 </thead>
                 <tbody>
@@ -43,8 +45,8 @@
                     <tr>
                         <td class="align-middle" scope="row"><img src='{{ $data->logo }}' width="60px" height="60px"/></td>
                         <td class="align-middle"><a href='company/{{ $data->id }}'>{{ $data->name }}</a></td>
-                        <td class="align-middle">{{ $data->email }}</td>
-                        <td class="align-middle">{{ $data->website }}</td>
+                        <td class="align-middle"><a href="mailto:{{ $data->email }}">{{ $data->email }}</a></td>
+                        <td class="align-middle"><a href="{{ $data->website }}" target="_blank">{{ $data->website }}</a></td>
                         <td class="align-middle">
                             <span class="d-flex flex-row justify-content-evenly">
                                 <a href="/companies/{{ $data->id }}" class="btn btn-outline-secondary mx-2 py-1 px-2"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -65,7 +67,7 @@
                         <td class="align-middle" scope="row">{{ $data->first_name }}</td>
                         <td class="align-middle">{{ $data->last_name }}</td>
                         <td class="align-middle"><a href="/company/{{ $data->company->id }}">{{ $data->company->name }}</a></td>
-                        <td class="align-middle">{{ $data->email }}</td>
+                        <td class="align-middle"><a href="mailto:{{ $data->email }}">{{ $data->email }}</a></td>
                         <td class="align-middle">{{ $data->phone_number }}</td>
                         <td class="align-middle">
                             <span class="d-flex flex-row justify-content-evenly">

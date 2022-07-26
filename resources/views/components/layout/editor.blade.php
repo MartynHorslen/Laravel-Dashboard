@@ -61,8 +61,8 @@
                     <input id="last_name" name="last_name" class="form-control w-100 mb-2" type="text" value="{{ old('last_name', $data->last_name) }}" required/>
 
                     <label for="company">Company: <span class="text-danger">*</span></label>
-                    @if ($errors->first('company'))
-                        <span class="text-danger d-block">{{ $errors->first('company') }}</span>
+                    @if ($errors->first('company_id'))
+                        <span class="text-danger d-block">{{ $errors->first('company_id') }}</span>
                     @endif
                     <select name="company_id" id="company_id" class="form-control w-100 mb-2">
                             <option class="w-100" disabled selected>Select a company</option>

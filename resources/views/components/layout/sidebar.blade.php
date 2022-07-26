@@ -1,6 +1,6 @@
 @auth
-<div id="sidebar" class="navbar bg-primary text-white sidebar d-flex flex-column align-items-center">
-    <ul class="navbar-nav text-center w-100">
+<div id="sidebar" class="navbar bg-primary text-white sidebar d-flex flex-column align-items-center pt-0">
+    <ul class="navbar-nav text-center w-100 sticky-top">
         <a href="/"><li class="nav-item btn-primary fw-bolder fs-5 px-2 py-4 text-white">Admin Dashboard</li></a>
         <a href="/companies" class="text-decoration-none">
             <li class="btn-primary nav-item border-top border-white py-4 {{ Request::is('companies') ? 'active' : '' }}">
