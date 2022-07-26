@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="d-flex flex-row justify-content-between mt-3">
-                        <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
+                        <a href="/companies" class="btn btn-danger">Cancel</a>
                         
                         <input type="submit" class="btn btn-success">
                     </div>
@@ -64,7 +64,7 @@
                     @if ($errors->first('company'))
                         <span class="text-danger d-block">{{ $errors->first('company') }}</span>
                     @endif
-                    <select name="company" id="company" class="form-control w-100 mb-2">
+                    <select name="company_id" id="company_id" class="form-control w-100 mb-2">
                             <option class="w-100" disabled selected>Select a company</option>
                         @foreach($companies as $company)
                             <option class="w-100"
@@ -88,7 +88,7 @@
                     <input id="phone_number" name="phone_number" class="form-control w-100" type="text" value="{{ old('phone_number', $data->phone_number) }}"/>
 
                     <div class="d-flex flex-row justify-content-between mt-3">
-                        <a href="{{ url()->previous() }}" class="btn btn-danger">Cancel</a>
+                        <a href="/employees" class="btn btn-danger">Cancel</a>
                         
                         <input type="submit" class="btn btn-success">
                     </div>
